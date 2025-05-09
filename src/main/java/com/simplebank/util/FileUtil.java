@@ -15,6 +15,7 @@ public class FileUtil {
         File directory = new File(DATA_DIR);
         if (!directory.exists()) {
             directory.mkdirs();
+            System.out.println("Hello");
         }
     }
 
