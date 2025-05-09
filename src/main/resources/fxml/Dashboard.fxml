@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<!-- Session 11-13 - JavaFX UI Controls, Layout and Charts -->
+<BorderPane prefWidth="800" prefHeight="600"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.simplebank.controller.DashboardController" styleClass="background">
+
+    <!-- Top section with welcome message -->
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20" />
+            </padding>
+            <Label fx:id="welcomeLabel" text="Welcome!" styleClass="title-label">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+        </VBox>
+    </top>
+
+    <!-- Center section with accounts and transactions tables -->
+    <center>
+        <SplitPane dividerPositions="0.5" orientation="VERTICAL">
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10" />
+                </padding>
+
+                <Label text="Your Accounts" styleClass="section-label">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+
+                <TableView fx:id="accountsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="accountNumberColumn" text="Account Number" prefWidth="150" />
+                        <TableColumn fx:id="accountTypeColumn" text="Type" prefWidth="100" />
+                        <TableColumn fx:id="balanceColumn" text="Balance" prefWidth="100" />
+                    </columns>
+                </TableView>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="newAccountButton" text="New Account" onAction="#handleNewAccount" />
+                    <Button fx:id="depositButton" text="Deposit" onAction="#handleDeposit" />
+                    <Button fx:id="withdrawButton" text="Withdraw" onAction="#handleWithdraw" />
+                </HBox>
+            </VBox>
+
+            <SplitPane dividerPositions="0.6">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10" />
+                    </padding>
+
+                    <Label text="Transaction History" styleClass="section-label">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+
+                    <TableView fx:id="transactionsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="dateColumn" text="Date" prefWidth="150" />
+                            <TableColumn fx:id="typeColumn" text="Type" prefWidth="100" />
+                            <TableColumn fx:id="amountColumn" text="Amount" prefWidth="100" />
+                            <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="200" />
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- Session 13 - JavaFX Charts -->
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10" />
+                    </padding>
+
+                    <Label text="Account Overview" styleClass="section-label">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font>
+                    </Label>
+
+                    <PieChart fx:id="accountsChart" VBox.vgrow="ALWAYS" />
+                </VBox>
+            </SplitPane>
+        </SplitPane>
+    </center>
+</BorderPane>

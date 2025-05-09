@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<!-- Session 11 - JavaFX FXML UI -->
+<VBox alignment="CENTER" spacing="15" prefWidth="600" prefHeight="450"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.simplebank.controller.RegisterController" styleClass="background">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <Label text="Create New Account" styleClass="title-label">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+
+    <VBox alignment="CENTER" spacing="10" maxWidth="400">
+        <GridPane vgap="10" hgap="10" alignment="CENTER">
+            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="usernameField" promptText="Enter username"
+                       GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <PasswordField fx:id="passwordField" promptText="Enter password"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Confirm Password:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <PasswordField fx:id="confirmPasswordField" promptText="Confirm password"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="fullNameField" promptText="Enter full name"
+                       GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="emailField" promptText="Enter email address"
+                       GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="registerButton" text="Register" onAction="#handleRegisterButton"
+                    prefWidth="120" styleClass="button-primary" />
+            <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancelButton"
+                    prefWidth="120" styleClass="button-secondary" />
+        </HBox>
+
+        <Label fx:id="messageLabel" styleClass="message-label" />
+    </VBox>
+</VBox>

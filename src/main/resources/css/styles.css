@@ -1,0 +1,64 @@
+/* File: src/main/resources/css/styles.css */
+
+/* Session 12 - JavaFX CSS Styling */
+.background {
+    -fx-background-color: #f5f5f5;
+}
+
+.title-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.section-label {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+}
+
+.button-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button-primary:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button-secondary {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.message-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+.table-view .column-header {
+    -fx-background-color: #3498db;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.chart {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
